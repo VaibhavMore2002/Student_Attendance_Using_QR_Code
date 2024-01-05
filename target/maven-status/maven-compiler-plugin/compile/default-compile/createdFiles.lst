@@ -1,0 +1,8 @@
+Action\Staff.class
+Networks\Mail$1.class
+Networks\Mail.class
+Action\Getimage.class
+Action\QR_codeGen.class
+Action\Student_register.class
+DBconnection\SQLconnection.class
+Action\QRCodeExtract.class

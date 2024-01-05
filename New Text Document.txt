@@ -1,0 +1,39 @@
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.image import MIMEImage
+
+
+def send_email(sender_email, sender_password, recipient_email, subject, body, image_path):
+    # Set up the MIME object
+    message = MIMEMultipart()
+    message["From"] = sender_email
+    message["To"] = recipient_email
+    message["Subject"] = subject
+
+    # Attach the body of the email
+    message.attach(MIMEText(body, "plain"))
+
+    # Attach the image
+    with open(image_path, "rb") as image_file:
+        image = MIMEImage(image_file.read(), name="image.png")
+        message.attach(image)
+
+    # Connect to the SMTP server
+    with smtplib.SMTP("smtp.gmail.com", 587) as server:
+        server.starttls()
+        server.login(sender_email, sender_password)
+
+        # Send the email
+        server.sendmail(sender_email, recipient_email, message.as_string())
+
+
+Example usage:
+sender_email = "morevaibhav545@gmail.com"
+sender_password = "xfea duua bmya omzf"
+recipient_email = "morevaibhav545@gmail.com"
+subject = "Test Email with Image"
+body = "Hello, this is a test email with an image."
+image_path = "C:\\Users\\91738\\Downloads\\Pallav Kshirsagar.png"
+send_email(
+    sender_email, sender_password, recipient_email, subject, body, image_path)
