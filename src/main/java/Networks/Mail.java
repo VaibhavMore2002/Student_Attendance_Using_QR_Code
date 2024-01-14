@@ -14,7 +14,7 @@ public class Mail {
         String to = email;
 
         // Sender's email ID needs to be mentioned
-        String from = "morevaibhav545@gmail.com";
+        String from = "enteryouremail@gmail.com";
 
         // Assuming you are sending email from through gmails smtp
         String host = "smtp.gmail.com";
