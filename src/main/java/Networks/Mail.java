@@ -31,7 +31,7 @@ public class Mail {
         // Get the Session object.// and pass username and password
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from, "xfea duua bmya omzf");
+                return new PasswordAuthentication(from, "enter your password");
             }
         });
 
